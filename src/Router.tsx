@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Banner from "./components/layout/Banner";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1 className="text-black font-bold bg-red-200">PRimeira rota</h1>,
+    element: <Banner/>,
   },
 ]);
 function Routers() {
