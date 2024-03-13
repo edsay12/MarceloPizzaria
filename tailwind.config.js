@@ -4,6 +4,9 @@ export default {
   important: "#root",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
     },
   },
   corePlugins: {
