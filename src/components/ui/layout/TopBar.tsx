@@ -28,7 +28,7 @@ function TopLinkList({ children, className }: TopBarProps) {
 function TopBarLink({ children, className, to, ...rest }: TopLinkProps) {
   return (
     <li >
-      <Link to={to} {...rest} className={cn(" text-gray-400 font-medium no-underline border hover:text-yellow-500    transition-colors", className)}>
+      <Link to={to} {...rest} className={cn("shadow-gray-900 text-gray-400 font-medium no-underline border hover:text-blacks inline-block transition-colors", className)}>
         {children}
       </Link>
     </li>

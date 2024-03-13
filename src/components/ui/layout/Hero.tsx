@@ -1,16 +1,18 @@
 import { Button } from "@mui/material";
 import vetor1 from "../../../assets/vetor1.svg";
 import pizza1 from "../../../assets/pizza1.png";
+import Tilt from "react-vanilla-tilt";
+
 function Hero() {
   return (
     <div className="mt-10">
       <div className="container flex justify-between flex-wrap-reverse ">
-        <div className="space-y-10 mt-32 ">
+        <div className="space-y-10 mt-10 lg:mt-32 ">
           <div className="lg:max-w-[500px] text-center lg:text-left justify-self-center  ">
             <h1 className="text-gray-400 text-5xl  leading-[55px]">
               A Melhor Pizza da Região
             </h1>
-            <p className="  w-full ">
+            <p className=" w-full ">
               Sabor inigualável, ingredientes frescos e tradição italiana em
               cada fatia. Descubra por que somos a melhor escolha na região para
               os verdadeiros amantes de pizza.
@@ -24,8 +26,24 @@ function Hero() {
             </Button>
           </div>
         </div>
-        <div>
-          <img src={pizza1} alt="" className="max-w-[700px] w-full" />
+        <div className="box-shadow">
+          <Tilt
+            options={{
+              scale: 3,
+              easing: "cubic-bezier(.03,.98,.52,.99)",
+              glare: false,
+
+              speed: 300,
+            }}
+            className="tilt"
+            
+            style={{
+              backgroundColor: "transparent",
+              boxShadow: "",
+            }}
+          >
+            <img src={pizza1} alt="" className="max-w-[700px] w-full" />
+          </Tilt>
         </div>
       </div>
       <img

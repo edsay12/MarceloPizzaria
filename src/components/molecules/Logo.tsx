@@ -7,7 +7,7 @@ interface logoprops extends HTMLAttributes<HTMLImageElement> {
 }
 
 function Logo({className ,...rest }: logoprops) {
-  return <img src={logo} alt="logo da marcelo pizzaria" className={cn("w-7",className)} {...rest} />;
+  return <img src={logo} alt="logo da marcelo pizzaria"  className={cn("w-7 ",className)} {...rest} />;
 }
 
 export default Logo;
