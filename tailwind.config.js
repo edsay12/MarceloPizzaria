@@ -7,6 +7,22 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
       },
+      colors: {
+        gray: {
+          400: "#404040",
+        },
+        yellow: {
+          500: "#FF9F0D",
+        },
+      },
+    },
+    container: {
+      center:true,
+      screens: {
+        mobile: "600px",
+        tablet: "900px",
+        desktop: "1440px",
+      },
     },
   },
   corePlugins: {

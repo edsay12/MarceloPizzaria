@@ -2,37 +2,37 @@ import { HTMLAttributes } from "react";
 import { cn } from "../../../lib/utils/cn";
 import { Link, LinkProps } from "react-router-dom";
 
-interface NavBarProps extends HTMLAttributes<HTMLElement> {}
-interface NavLinkProps extends LinkProps {}
+interface TopBarProps extends HTMLAttributes<HTMLElement> {}
+interface TopLinkProps extends LinkProps {}
 
-function NavBarHeader({ children, className }: NavBarProps) {
-  return <header className={cn(" w-full", className)}>{children}</header>;
+function TopBarHeader({ children, className }: TopBarProps) {
+  return <header className={cn(" w-full container mx-auto", className)}>{children}</header>;
 }
 
-function NavBar({ children, className }: NavBarProps) {
+function TopBar({ children, className }: TopBarProps) {
   return <nav className={cn("py-4 flex w-full flex-grow justify-between items-center", className)}>{children}</nav>;
 }
 
-function NavLinkLogo({ children, className, to }: NavLinkProps) {
+function TopLinkLogo({ children, className, to }: TopLinkProps) {
   return (
-    <Link to={to} className={cn("", className)}>
+    <Link to={to} className={cn(" text-left", className)}>
       {children}
     </Link>
   );
 }
 
-function NavLinkList({ children, className }: NavBarProps) {
+function TopLinkList({ children, className }: TopBarProps) {
   return <ul className={cn("flex list-none gap-4", className)}>{children}</ul>;
 }
 
-function NavBarLink({ children, className, to, ...rest }: NavLinkProps) {
+function TopBarLink({ children, className, to, ...rest }: TopLinkProps) {
   return (
     <li >
-      <Link to={to} {...rest} className={cn(" text-black no-underline", className)}>
+      <Link to={to} {...rest} className={cn(" text-gray-400 font-medium no-underline border hover:text-yellow-500    transition-colors", className)}>
         {children}
       </Link>
     </li>
   );
 }
 
-export { NavBar, NavBarHeader, NavLinkLogo, NavLinkList, NavBarLink };
+export { TopBar, TopBarHeader, TopLinkLogo, TopLinkList, TopBarLink };
