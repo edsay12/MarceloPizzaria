@@ -36,12 +36,12 @@ function CardIco({ className, children }: SectionProps) {
 }
 
 function CardTitle({ className, children }: SectionProps) {
-  return <h3 className={cn("text-2xl text-black", className)}>{children}</h3>;
+  return <h3 className={cn("text-lg text-black", className)}>{children}</h3>;
 }
 
 function CardDescription({ className, children }: SectionProps) {
   return (
-    <p className={cn("text-lg text-gray-400 font-normal", className)}>
+    <p className={cn("text-sm text-gray-400 font-normal", className)}>
       {children}
     </p>
   );
