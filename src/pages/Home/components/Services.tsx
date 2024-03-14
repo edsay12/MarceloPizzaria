@@ -36,7 +36,7 @@ function Services() {
 
         <SectionContainer>
           <CardWithIconContainer>
-            <CardWithIcon>
+            <CardWithIcon className="hover:scale-110 transition-all duration-300 ease-in-out">
               <CardIco>
                 <LocalPizzaOutlinedIcon className="text-[110px]" />
               </CardIco>
