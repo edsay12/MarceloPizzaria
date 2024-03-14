@@ -13,7 +13,7 @@ function Section({ className, children }: SectionProps) {
 
 function SectionContainer({ className, children }: SectionProps) {
   return (
-    <section className={cn(" container flex justify-between mt-10", className)}>
+    <section className={cn("container ", className)}>
       {children}
     </section>
   );
@@ -24,7 +24,7 @@ function SectionDetailsContainer({ className, children }: SectionProps) {
   return (
     <div
       className={cn(
-        "space-y-10 mt-10 lg:mt-32 lg:max-w-[500px] w-full text-center lg:text-left justify-self-center ",
+        " mt-10  xl:max-w-[500px] w-full text-center xl:text-left  ",
         className
       )}
     >
@@ -41,7 +41,7 @@ function SectionTitle({ className, children }: SectionProps) {
   return (
     <section
       className={cn(
-        "text-gray-400 font-semibold   text-3xl lg:text-5xl  leading-[55px] ",
+        "text-gray-400 font-semibold   text-3xl lg:text-5xl  leading-[55px] mb-5 ",
         className
       )}
     >
@@ -50,7 +50,7 @@ function SectionTitle({ className, children }: SectionProps) {
   );
 }
 function SectionSubTitle({ className, children }: SectionProps) {
-  return <section className={cn("", className)}>{children}</section>;
+  return <section className={cn("text-sm text-yellow-500 font-semibold mb-2", className)}>{children}</section>;
 }
 
 function SectionDetails({ className, children }: SectionProps) {

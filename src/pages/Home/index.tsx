@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
-import NavBar from "../_LayoutComponents/NavBar";
+import NavBar from "../_Layout/NavBar";
 import About from "./components/About";
+import Services from "./components/Services";
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
       <main>
         <Hero />
         <About/>
+        <Services/>
       </main>
     </>
   );

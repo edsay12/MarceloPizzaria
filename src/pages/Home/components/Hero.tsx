@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import vetor1 from "../../../assets/vetor1.svg";
 import pizza1 from "../../../assets/pizza1.png";
 import Tilt from "react-vanilla-tilt";
+
 import {
   Section,
   SectionContainer,
@@ -15,8 +16,8 @@ function Hero() {
   return (
     <div>
       <Section className=" ">
-        <SectionContainer className="flex-wrap-reverse">
-          <SectionDetailsContainer>
+        <SectionContainer className="flex-wrap-reverse flex justify-between md:items-center  ">
+          <SectionDetailsContainer className="lg:mt-5">
             <SectionTitle>A Melhor Pizza da Região</SectionTitle>
             <SectionDetails>
               Sabor inigualável, ingredientes frescos e tradição italiana em
@@ -54,11 +55,11 @@ function Hero() {
 
         {/* // vetor  */}
       </Section>
-        <img
-          src={vetor1}
-          className="absolute top-0 right-0 lg:max-w-[900px]  max-w-[800px] -z-20"
-          alt=""
-        />
+      <img
+        src={vetor1}
+        className="absolute top-0 right-0 lg:max-w-[900px]  max-w-[800px] -z-20"
+        alt=""
+      />
     </div>
   );
 }

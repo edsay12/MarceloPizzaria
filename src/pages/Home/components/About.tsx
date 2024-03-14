@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import vetor2 from "../../../assets/vetor2.svg";
-import pizza1 from "../../../assets/pizza1.png";
+import pizza2 from "../../../assets/pizza2.svg";
 import Tilt from "react-vanilla-tilt";
 import {
   Section,
@@ -8,6 +8,7 @@ import {
   SectionDetails,
   SectionDetailsContainer,
   SectionImageContainer,
+  SectionSubTitle,
   SectionTitle,
 } from "../../../components/ui/section";
 
@@ -15,7 +16,7 @@ function About() {
   return (
     <>
       <Section className=" mt-[500px]">
-        <SectionContainer className="flex-wrap-reverse">
+        <SectionContainer className="flex justify-between xl:items-center mt-10 flex-wrap " >
           <SectionImageContainer className="box-shadow">
             <Tilt
               options={{
@@ -31,29 +32,32 @@ function About() {
                 boxShadow: "",
               }}
             >
-              <img src={pizza1} alt="" className="max-w-[700px] w-full" />
+              <img src={pizza2} alt="" className="max-w-[700px] w-full" />
             </Tilt>
           </SectionImageContainer>
           <SectionDetailsContainer>
-            <SectionTitle>A Melhor Pizza da Região</SectionTitle>
+            <SectionSubTitle>Sobre</SectionSubTitle>
+            <SectionTitle className=" text-2xl lg:text-3xl">Um Pouco Da Nossa História</SectionTitle>
             <SectionDetails>
               Sabor inigualável, ingredientes frescos e tradição italiana em
               cada fatia. Descubra por que somos a melhor escolha na região para
-              os verdadeiros amantes de pizza.
+              os verdadeiros amantes de pizza.Sabor inigualável, ingredientes
+              frescos e tradição italiana em cada fatia. Descubra por que somos
+              a melhor escolha na região para os verdadeiros amantes de pizza.
             </SectionDetails>
             <Button
               aria-label="Fazer pedido"
               className="bg-yellow-500 text-white hover:scale-110 transition-all duration-500 mt-5"
               size="large"
             >
-              Fazer Pedido
+              Ler Mais
             </Button>
           </SectionDetailsContainer>
         </SectionContainer>
 
         <img
           src={vetor2}
-          className="absolute  -top-[300px] -left-5 lg:max-w-[500px]  max-w-[300px] -z-20"
+          className="absolute  -top-[200px] md:-top=[100px] lg:-top-[250px] -left-5 lg:max-w-[500px]  max-w-[300px] -z-20"
           alt=""
         />
       </Section>
