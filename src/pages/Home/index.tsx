@@ -1,15 +1,15 @@
-
-import Hero from "../../components/ui/layout/Hero";
+import Hero from "./components/Hero";
 import NavBar from "../_LayoutComponents/NavBar";
-
+import About from "./components/About";
 
 function Home() {
   return (
     <>
       <NavBar />
-      <Hero/>
-
-      
+      <main>
+        <Hero />
+        <About/>
+      </main>
     </>
   );
 }

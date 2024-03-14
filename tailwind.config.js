@@ -10,6 +10,7 @@ export default {
       colors: {
         gray: {
           400: "#404040",
+          300: "#6C6C6C",
         },
         yellow: {
           500: "#FF9F0D",
@@ -17,10 +18,10 @@ export default {
       },
     },
     container: {
-      center:true,
+      center: true,
       screens: {
         mobile: "600px",
-        tablet: "900px",
+        tablet: "1000px",
         desktop: "1440px",
       },
     },

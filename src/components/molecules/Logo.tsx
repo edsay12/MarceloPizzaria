@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import { cn } from "../../lib/utils/cn";
 
 interface logoprops extends HTMLAttributes<HTMLImageElement> {
