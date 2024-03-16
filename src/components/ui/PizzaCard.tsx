@@ -17,7 +17,7 @@ function PizzaCard({ className, children }: PizzaCardProps) {
   return (
     <div
       className={cn(
-        "relative flex flex-col p-10 items-center justify-center text-center bg-gray-50  rounded-2xl hover:scale-110 transition-all duration-300 ease-in-out max-h-[380px]",
+        "relative shadow-sm flex flex-col p-10 items-center justify-center text-center bg-gray-50  rounded-2xl hover:scale-110 transition-all duration-300 ease-in-out max-h-[380px]",
         className
       )}
     >

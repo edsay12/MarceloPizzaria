@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import {
   PizzaCard,
   PizzaCardButton,
@@ -35,21 +36,33 @@ function Recipes() {
       </SectionContainer>
 
       <SectionContainer>
-        <PizzaCardContainer >
+        <PizzaCardContainer>
           {pizzas.map((pizza) => {
             return (
-              <PizzaCard className="w-full">
+              <PizzaCard key={pizza.id} className="w-full">
                 <PizzaCardImage className="w-full" src={pizza.imagem} />
                 <PizzaCardButton>+</PizzaCardButton>
 
-                <PizzaCardPrice>{pizza.preco.toLocaleString("pt-BR" ,{style:"currency",currency:'BRL'})}</PizzaCardPrice>
+                <PizzaCardPrice>
+                  {pizza.preco.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </PizzaCardPrice>
 
                 <PizzaCardTitle>{pizza.titulo}</PizzaCardTitle>
-                <PizzaCardDescription>{pizza.ingredientes}</PizzaCardDescription>
+                <PizzaCardDescription>
+                  {pizza.ingredientes}
+                </PizzaCardDescription>
               </PizzaCard>
             );
           })}
         </PizzaCardContainer>
+      </SectionContainer>
+      <SectionContainer className="flex justify-center">
+        <Button className="bg-yellow-500 mt-20 text-white mx-auto">
+          Ver Mais
+        </Button>
       </SectionContainer>
     </Section>
   );
