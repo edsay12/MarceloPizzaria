@@ -1,4 +1,13 @@
 import {
+  PizzaCard,
+  PizzaCardButton,
+  PizzaCardContainer,
+  PizzaCardDescription,
+  PizzaCardImage,
+  PizzaCardPrice,
+  PizzaCardTitle,
+} from "../../../components/ui/PizzaCard";
+import {
   Section,
   SectionContainer,
   SectionDetails,
@@ -6,6 +15,8 @@ import {
   SectionSubTitle,
   SectionTitle,
 } from "../../../components/ui/section";
+
+import pizzas from "../../../data/pizzaData";
 
 function Recipes() {
   return (
@@ -21,6 +32,24 @@ function Recipes() {
             fatia. Descubra por que somos
           </SectionDetails>
         </SectionDetailsContainer>
+      </SectionContainer>
+
+      <SectionContainer>
+        <PizzaCardContainer>
+          {pizzas.map((pizza) => {
+            return (
+              <PizzaCard className="max-w-56 bg-red-200">
+                <PizzaCardImage className="w-full" src={pizza.imagem} />
+                <PizzaCardButton>+</PizzaCardButton>
+
+                <PizzaCardPrice>{pizza.preco.toLocaleString("pt-BR" ,{style:"currency",currency:'BRL'})}</PizzaCardPrice>
+
+                <PizzaCardTitle>{pizza.titulo}</PizzaCardTitle>
+                <PizzaCardDescription>{pizza.ingredientes}</PizzaCardDescription>
+              </PizzaCard>
+            );
+          })}
+        </PizzaCardContainer>
       </SectionContainer>
     </Section>
   );

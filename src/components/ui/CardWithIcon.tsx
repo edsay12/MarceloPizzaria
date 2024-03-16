@@ -19,7 +19,7 @@ function CardWithIcon({ className, children }: SectionProps) {
   return (
     <div
       className={cn(
-        "text-center bg-gray-200 p-10 rounded-2xl hover:scale-110 transition-all duration-300 ease-in-out",
+        "text-center bg-gray-100 p-10 rounded-2xl hover:scale-110 transition-all duration-300 ease-in-out",
         className
       )}
     >
