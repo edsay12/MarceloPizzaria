@@ -26,11 +26,11 @@ function FooterLogo({ children, className }: FooterProps) {
 }
 
 function FooterNav({ children, className }: FooterProps) {
-  return <nav className={cn("flex flex-wrap gap-10 ", className)}>{children}</nav>;
+  return <nav className={cn("flex flex-wrap  md:flex-nowrap gap-10 ", className)}>{children}</nav>;
 }
 
 function FooterSection({ children, className }: FooterProps) {
-  return <div className={cn("w-full xl:w-32 text-center xl:text-left mx-auto", className)}>{children}</div>;
+  return <div className={cn("w-full   text-center xl:text-left mx-auto min-w-[100px] bg-red-200", className)}>{children}</div>;
 }
 function FooterSectionTitle({ children, className }: FooterProps) {
   return (
