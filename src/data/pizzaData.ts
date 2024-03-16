@@ -2,7 +2,7 @@ const pizzas = [
   {
     id: "d1e9b3f2-8a6c-4e7a-9e5b-1f3c8d7e0a2f",
     imagem: "./PizzaImage/frango-catupiry.png",
-    titulo: "Pizza de Frango com Catupiry",
+    titulo: "Pizza de Frango ",
     // ingredientes: ["Frango desfiado", "Catupiry", "Azeitonas"],
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 24.99,

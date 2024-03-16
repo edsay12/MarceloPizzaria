@@ -22,8 +22,8 @@ export default {
     container: {
       center: true,
       screens: {
-        mobile: "600px",
-        tablet: "1000px",
+        mobile: "640px",
+        tablet: "1280px",
         desktop: "1440px",
       },
     },

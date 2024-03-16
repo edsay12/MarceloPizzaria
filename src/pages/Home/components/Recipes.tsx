@@ -35,10 +35,10 @@ function Recipes() {
       </SectionContainer>
 
       <SectionContainer>
-        <PizzaCardContainer>
+        <PizzaCardContainer >
           {pizzas.map((pizza) => {
             return (
-              <PizzaCard className="max-w-56 bg-red-200">
+              <PizzaCard className="w-full">
                 <PizzaCardImage className="w-full" src={pizza.imagem} />
                 <PizzaCardButton>+</PizzaCardButton>
 
