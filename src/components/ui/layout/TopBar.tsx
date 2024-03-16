@@ -25,11 +25,6 @@ function TopLinkList({ children, className }: TopBarProps) {
   return <ul className={cn("flex list-none gap-4", className)}>{children}</ul>;
 }
 
-function ResponsiveIco(){
-
-  return
-
-}
 
 function TopBarLink({ children, className, to, ...rest }: TopLinkProps) {
   return (
