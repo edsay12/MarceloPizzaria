@@ -1,5 +1,7 @@
 function Menu() {
-  return <>Sou uma linda pagina de menu</>;
+  return <>
+    <div className="bg-banner w-full h-[500px] bg-cover bg-center"></div>
+  </>;
 }
 
 export default Menu;

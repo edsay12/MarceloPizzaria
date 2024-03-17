@@ -58,7 +58,7 @@ function FooterItem() {
       </FooterContainer>
       <img
         src={footerVetor}
-        className="absolute top-0 right-0 w-[200px] hidden xl:flex"
+        className="absolute top-0 right-0 w-[200px] -z-20 hidden xl:flex"
         alt=""
         loading="lazy"
       />

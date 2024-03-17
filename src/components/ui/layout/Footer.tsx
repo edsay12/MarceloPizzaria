@@ -12,7 +12,7 @@ function FooterContainer({ children, className }: FooterProps) {
   return (
     <footer
       className={cn(
-        " container flex gap-10  justify-between  flex-wrap  mx-auto p-20  pl-0 ",
+        " container flex gap-10  justify-between itens-center flex-wrap  mx-auto pt-20 pb-20  pl-0  ",
         className
       )}
     >
@@ -22,11 +22,11 @@ function FooterContainer({ children, className }: FooterProps) {
 }
 
 function FooterLogo({ children, className }: FooterProps) {
-  return <div className={cn("max-w-[148px] xl:mx-0 mx-auto", className)}>{children}</div>;
+  return <div className={cn("max-w-[148px] xl:mx-0 mx-auto ", className)}>{children}</div>;
 }
 
 function FooterNav({ children, className }: FooterProps) {
-  return <nav className={cn("flex flex-wrap  md:flex-nowrap gap-10 ", className)}>{children}</nav>;
+  return <nav className={cn("flex flex-wrap  md:flex-nowrap gap-10 mx-auto xl:mx-0", className)}>{children}</nav>;
 }
 
 function FooterSection({ children, className }: FooterProps) {

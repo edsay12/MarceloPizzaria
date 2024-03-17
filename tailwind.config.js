@@ -7,13 +7,16 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
       },
+      backgroundImage: {
+        banner: "url('./src/assets/banner.svg')",
+      },
       colors: {
         gray: {
-          50:'FAFAFA',
-          200:"#EBEBEF",
+          50: "FAFAFA",
+          200: "#EBEBEF",
           300: "#6C6C6C",
           400: "#404040",
-          500:'#333333'
+          500: "#333333",
         },
         yellow: {
           500: "#FF9F0D",
