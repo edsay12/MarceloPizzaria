@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import vetor1 from "../../../assets/vetor1.svg";
-import pizza1 from "../../../assets/pizza1.png";
+import pizza1 from "../../../assets/pizza1.svg";
 import Tilt from "react-vanilla-tilt";
 
 import {
@@ -11,8 +11,19 @@ import {
   SectionImageContainer,
   SectionTitle,
 } from "../../../components/ui/section";
+import { useEffect, useState } from "react";
+import { Blurhash } from "react-blurhash";
 
 function Hero() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      setImageLoaded(true);
+    };
+    img.src = pizza1;
+  }, []);
   return (
     <div>
       <Section className=" ">
@@ -34,31 +45,43 @@ function Hero() {
           </SectionDetailsContainer>
 
           <SectionImageContainer className="box-shadow">
-            <Tilt
-              options={{
-                scale: 3,
-                easing: "cubic-bezier(.03,.98,.52,.99)",
-                glare: false,
+            {!imageLoaded && (
+              <Blurhash
+                hash="LHLDV.}918t3%hi_ofoy1*I[iyJT"
+                width="100%"
+                height="100%"
+                resolutionX={32}
+                resolutionY={32}
+                punch={1}
+              />
+            )}
+            {imageLoaded && (
+              <Tilt
+                options={{
+                  scale: 3,
+                  easing: "cubic-bezier(.03,.98,.52,.99)",
+                  glare: false,
 
-                speed: 300,
-              }}
-              className="tilt"
-              style={{
-                backgroundColor: "transparent",
-                boxShadow: "",
-              }}
-            >
-              <img src={pizza1} alt="" className="max-w-[700px] w-full" />
-            </Tilt>
+                  speed: 300,
+                }}
+                className="tilt"
+                style={{
+                  backgroundColor: "transparent",
+                  boxShadow: "",
+                }}
+              >
+                <img src={pizza1} alt="" className="max-w-[700px] w-full" />
+              </Tilt>
+            )}
           </SectionImageContainer>
         </SectionContainer>
-
         {/* // vetor  */}
       </Section>
       <img
         src={vetor1}
         className="absolute top-0 right-0 lg:max-w-[900px]  max-w-[800px] -z-20"
         alt=""
+        loading="lazy"
       />
     </div>
   );

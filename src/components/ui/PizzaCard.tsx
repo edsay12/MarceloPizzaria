@@ -32,6 +32,7 @@ function PizzaCardImage({ className, children, src, ...rest }: CardImageProps) {
       src={src}
       title="image de um pizza"
       className={cn("w-full max-w-40", className)}
+      loading="lazy"
       {...rest}
     >
       {children}

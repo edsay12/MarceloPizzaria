@@ -30,7 +30,7 @@ function FooterNav({ children, className }: FooterProps) {
 }
 
 function FooterSection({ children, className }: FooterProps) {
-  return <div className={cn("w-full   text-center xl:text-left mx-auto min-w-[100px] bg-red-200", className)}>{children}</div>;
+  return <div className={cn("w-full   text-center xl:text-left mx-auto min-w-[100px] ", className)}>{children}</div>;
 }
 function FooterSectionTitle({ children, className }: FooterProps) {
   return (

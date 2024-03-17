@@ -59,6 +59,7 @@ function About() {
           src={vetor2}
           className="absolute  -top-[200px] md:-top=[100px] lg:-top-[250px] -left-5 lg:max-w-[500px]  max-w-[300px] -z-20"
           alt=""
+          loading="lazy"
         />
       </Section>
       {/* // vetor  */}
