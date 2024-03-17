@@ -12,7 +12,7 @@ function FooterContainer({ children, className }: FooterProps) {
   return (
     <footer
       className={cn(
-        " container flex gap-10  justify-between  flex-wrap  mx-auto p-20   ",
+        " container flex gap-10  justify-between  flex-wrap  mx-auto p-20  pl-0 ",
         className
       )}
     >
