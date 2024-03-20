@@ -19,7 +19,7 @@ function NavBar() {
 
         <TopLinkList className="gap-10">
           <TopBarLink to={"/"}>Inicio</TopBarLink>
-          <TopBarLink to={"#Menu"}>Menu</TopBarLink>
+          <TopBarLink to={"/Menu"}>Menu</TopBarLink>
           <TopBarLink to={"#Delivery"}>Delivery</TopBarLink>
           <TopBarLink to={"#Sobre"}>Sobre</TopBarLink>
         </TopLinkList>

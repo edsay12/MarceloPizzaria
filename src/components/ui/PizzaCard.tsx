@@ -43,7 +43,7 @@ function PizzaCardButton({ className, children,...rest }: CardButtonProps) {
   return (
     <button
       className={cn(
-        "absolute top-[165px] z-20 bg-yellow-500 outline-none border-none w-14 h-14 rounded-full text-white font-semibold cursor-pointer hover:scale-110 transition-all duration-500   ",
+        "absolute top-[165px] z-20 bg-yellow-500 outline-none border-none max-w-14 h-14 w-full rounded-full text-white font-semibold cursor-pointer hover:scale-110 transition-all duration-500   ",
         className
       )}
       {...rest}
