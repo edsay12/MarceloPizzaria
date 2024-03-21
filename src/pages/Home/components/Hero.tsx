@@ -11,19 +11,19 @@ import {
   SectionImageContainer,
   SectionTitle,
 } from "../../../components/ui/section";
-import { useEffect, useState } from "react";
-import { Blurhash } from "react-blurhash";
+
+
 
 function Hero() {
-  const [imageLoaded, setImageLoaded] = useState(false);
+  // const [imageLoaded, setImageLoaded] = useState(false);
 
-  useEffect(() => {
-    const img = new Image();
-    img.onload = () => {
-      setImageLoaded(true);
-    };
-    img.src = pizza1;
-  }, []);
+  // useEffect(() => {
+  //   const img = new Image();
+  //   img.onload = () => {
+  //     setImageLoaded(true);
+  //   };
+  //   img.src = pizza1;
+  // }, []);
   return (
     <div>
       <Section className=" ">
@@ -45,34 +45,22 @@ function Hero() {
           </SectionDetailsContainer>
 
           <SectionImageContainer className="box-shadow">
-            {!imageLoaded && (
-              <Blurhash
-                hash="LHLDV.}918t3%hi_ofoy1*I[iyJT"
-                width="100%"
-                height="100%"
-                resolutionX={32}
-                resolutionY={32}
-                punch={1}
-              />
-            )}
-            {imageLoaded && (
-              <Tilt
-                options={{
-                  scale: 3,
-                  easing: "cubic-bezier(.03,.98,.52,.99)",
-                  glare: false,
+            <Tilt
+              options={{
+                scale: 3,
+                easing: "cubic-bezier(.03,.98,.52,.99)",
+                glare: false,
 
-                  speed: 300,
-                }}
-                className="tilt"
-                style={{
-                  backgroundColor: "transparent",
-                  boxShadow: "",
-                }}
-              >
-                <img src={pizza1} alt="" className="max-w-[700px] w-full" />
-              </Tilt>
-            )}
+                speed: 300,
+              }}
+              className="tilt"
+              style={{
+                backgroundColor: "transparent",
+                boxShadow: "",
+              }}
+            >
+              <img src={pizza1} alt="" className="max-w-[700px] w-full" />
+            </Tilt>
           </SectionImageContainer>
         </SectionContainer>
         {/* // vetor  */}

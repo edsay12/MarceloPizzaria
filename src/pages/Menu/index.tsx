@@ -2,9 +2,11 @@ import FilterPriceForm from "./components/FilterPriceForm";
 import FilterType from "./components/FilterType";
 import SearchResult from "./components/SearchResult";
 import Pizzas from "./components/Pizzas";
-import BannerItem from "./components/Banner-item";
-import SearchForm from "./components/SearchForm";
 
+import SearchForm from "./components/SearchForm";
+import { lazy } from "react";
+
+const BannerItem = lazy(() => import("./components/Banner-item"));
 
 function Menu() {
   return (

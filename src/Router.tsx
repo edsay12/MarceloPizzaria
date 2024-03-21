@@ -1,28 +1,32 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import { lazy, Suspense } from "react";
+import Loading from "./components/ui/loading";
 
-
-import RootLayout from "./pages/RootLayout";
-import Home from "./pages/Home";
-import Menu from "./pages/Menu";
-import Cart from "./pages/Cart";
-
+const Home = lazy(() => import("./pages/Home"));
+const RootLayout = lazy(() => import("./pages/RootLayout"));
+const Menu = lazy(() => import("./pages/Menu"));
+const Cart = lazy(() => import("./pages/Cart"));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout/>}>
-      <Route index element={<Home/>} />
-      <Route path="/menu" element={<Menu/>} />
-      <Route path="/cart" element={<Cart/>} />
-      
-
-
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path="/menu" element={<Menu />} />
+      <Route path="/cart" element={<Cart />} />
     </Route>
-
   )
-
-)
+);
 function Routers() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<Loading/>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default Routers;
