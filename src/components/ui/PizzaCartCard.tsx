@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, HTMLAttributes, ImgHTMLAttributes, useState } from "react";
+import {  HTMLAttributes, ImgHTMLAttributes, useState } from "react";
 
 import { cn } from "../../lib/utils/cn";
 
@@ -98,7 +98,7 @@ function PizzaCartCardSizesSelectOption({ className, children }: PizzaCardProps)
         </option>
     );
 }
-function PizzaCartCardQuantitySelect({ className, children }: PizzaCardProps) {
+function PizzaCartCardQuantitySelect({ className }: PizzaCardProps) {
     const [value, setValue] = useState(1)
     const addValue = ():void => {
         setValue((v) => v + 1)

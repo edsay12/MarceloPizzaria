@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import BannerItem from "./components/Banner-item";
 import CartItem from "./components/Cart-item";
 
@@ -17,9 +18,32 @@ function Cart() {
               <p>Quantidade</p>
             </div>
           </div>
-          <CartItem/>
+          <CartItem />
         </div>
-        <div></div>
+        <div className="flex flex-col gap-10">
+          <div className="flex items-center gap-3">
+            <h3 className="text-2xl">Resumo</h3>
+            <p className="text-sm">3 itens</p>
+          </div>
+          <div className="flex items-center justify-between">
+            <h4 className="text-2xl text-gray-300">Subtotal</h4>
+            <p className="text-sm">$300</p>
+          </div>
+          <div className="flex items-center justify-between">
+            <h4 className="text-2xl text-gray-300">Entrega</h4>
+            <p className="text-sm">Grátis</p>
+          </div>
+          <div className="flex items-center justify-between">
+            <h4 className="text-2xl text-gray-300">Taxa</h4>
+            <p className="text-sm">Não inclusa</p>
+          </div>
+          <div className="w-full h-[2px] bg-gray-300"></div>
+          <div className="flex items-center justify-between">
+            <h4 className="text-2xl ">Total</h4>
+            <p className="text-sm">$300</p>
+          </div>
+          <Button variant="contained" className="bg-yellow-500">Pagamento</Button>
+        </div>
       </section>
     </>
   );
