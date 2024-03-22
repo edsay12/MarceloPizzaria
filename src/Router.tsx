@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Loading from "./components/ui/loading";
+import PaymentFinish from "./pages/PaymentFinish";
 
 const Home = lazy(() => import("./pages/Home"));
 const RootLayout = lazy(() => import("./pages/RootLayout"));
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/menu" element={<Menu />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/payment" element={<PaymentFinish   />} />
     </Route>
   )
 );

@@ -5,7 +5,7 @@ interface PaymentDetailsProps extends HTMLAttributes<HTMLElement> {}
 
 function PaymentDetailsContainer({ className, children }: PaymentDetailsProps) {
   return (
-    <div className={cn("flex flex-col gap-10  bg-white shadow-sm p-5", className)}>{children}</div>
+    <div className={cn("flex flex-col gap-10   shadow-md-sm bg-white p-5", className)}>{children}</div>
   );
 }
 
@@ -14,7 +14,7 @@ function PaymentDetailsContainerResume({
   children,
 }: PaymentDetailsProps) {
   return (
-    <div className={cn("flex items-center gap-3 bg-white", className)}>{children}</div>
+    <div className={cn("flex items-center gap-3 ", className)}>{children}</div>
   );
 }
 function PaymentDetailsContainerResumeTitle({

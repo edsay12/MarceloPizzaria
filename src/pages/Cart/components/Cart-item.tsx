@@ -12,8 +12,8 @@ function CartItem() {
 
                 return (
 
-                    <PizzaCartCard className="shadow-xl p-5">
-                        <PizzaDetailsCartCard>
+                    <PizzaCartCard className="shadow-xl p-5 flex-col md:flex-row">
+                        <PizzaDetailsCartCard className="flex-col md:flex-row">
 
                             <PizzaCartCardImage src={pizza.imagem} />
                             <PizzaDetailsCartCardRight>
@@ -26,9 +26,9 @@ function CartItem() {
                             </PizzaDetailsCartCardRight>
                         </PizzaDetailsCartCard>
 
-                        <PizzaCartCardFooter  >
+                        <PizzaCartCardFooter className="flex-col-reverse md:flex-row mt-10">
 
-                            <PizzaCartCardPrice>
+                            <PizzaCartCardPrice className="font-bold text-xl">
                                 R$ 33,90
                             </PizzaCartCardPrice>
                             <PizzaCartCardQuantitySelect />
