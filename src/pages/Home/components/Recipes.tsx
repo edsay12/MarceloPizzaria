@@ -21,7 +21,7 @@ import pizzas from "../../../data/pizzaData";
 
 function Recipes() {
   return (
-    <Section className="mt-[100px]">
+    <Section className="mt-[100px]"  id="recipes">
       <SectionContainer className="flex justify-between md:items-center mt-10 flex-wrap">
         <SectionDetailsContainer className="w-full xl:max-w-full xl:text-center">
           <SectionSubTitle>Receitas</SectionSubTitle>

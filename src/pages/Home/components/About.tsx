@@ -15,7 +15,7 @@ import {
 function About() {
   return (
     <>
-      <Section className=" mt-[500px]">
+      <Section className="mt-[500px]" id="about">
         <SectionContainer className="flex justify-between xl:items-center mt-10 flex-wrap " >
           <SectionImageContainer className="box-shadow">
             <Tilt

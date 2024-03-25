@@ -10,6 +10,7 @@ function SearchForm() {
             title="pesquisar"
             className="border-none outline-none text-gray-400 pl-3 "
             placeholder="Pesquisar pizza"
+            autoFocus
           />
           <button
             type="submit"
