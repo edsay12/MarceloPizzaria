@@ -24,13 +24,13 @@ function NavBar() {
           <TopBarLink to={"#Sobre"}>Sobre</TopBarLink>
         </TopLinkList>
         <TopLinkList>
-          <TopBarLink to={"/Cardapio"} title="Pesquisar">
+          <TopBarLink to={"/menu"} title="Pesquisar">
             <SearchIcon />
           </TopBarLink>
           <TopBarLink to={"/User"} title="Usuario">
             <PersonOutlineIcon />
           </TopBarLink>
-          <TopBarLink to={"/Carrinho"} title="Carrinho">
+          <TopBarLink to={"/cart"} title="Carrinho">
             <ShoppingCartIcon />
           </TopBarLink>
         </TopLinkList>

@@ -7,6 +7,7 @@ import AppleIcon from "@mui/icons-material/Apple";
 import PixIcon from "@mui/icons-material/Pix";
 import FormItem from "./components/form-item";
 import TitleItem from "./components/title-Item";
+import PaymentModalItem from "./components/paymentModal-item";
 function PaymentFinish() {
   return (
     <>
@@ -50,6 +51,7 @@ function PaymentFinish() {
         <div>
           <PaymentDetailsItem />
         </div>
+        <PaymentModalItem/>
       </section>
     </>
   );

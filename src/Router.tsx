@@ -5,8 +5,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import Loading from "./components/ui/loading";
 import PaymentFinish from "./pages/PaymentFinish";
+import Loading from "./components/molecules/loading";
 
 const Home = lazy(() => import("./pages/Home"));
 const RootLayout = lazy(() => import("./pages/RootLayout"));
