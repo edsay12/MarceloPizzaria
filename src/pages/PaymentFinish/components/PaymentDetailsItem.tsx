@@ -9,8 +9,13 @@ import {
   PaymentDetailsValue,
 } from "../../../components/ui/PaymentDetails";
 import { Button } from "@mui/material";
+import { PaymentModalContext, PaymentModalContextType } from "../../../contexts/paymentoModalContext";
+import {useContext} from 'react'
+import { redirect } from "react-router-dom";
 
 function PaymentDetailsItem() {
+  const { oppenModal} = useContext(PaymentModalContext) as PaymentModalContextType
+  
   return (
     <PaymentDetailsContainer>
       <PaymentDetailsContainerResume>
@@ -40,7 +45,7 @@ function PaymentDetailsItem() {
         <PaymentDetailsValue>$300</PaymentDetailsValue>
       </PaymentDetails>
 
-      <Button variant="contained" className="bg-yellow-500">
+      <Button variant="contained" className="bg-yellow-500" onClick={oppenModal}>
         Pagar
       </Button>
     </PaymentDetailsContainer>

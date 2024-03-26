@@ -7,8 +7,10 @@ import AppleIcon from "@mui/icons-material/Apple";
 import PixIcon from "@mui/icons-material/Pix";
 import FormItem from "./components/form-item";
 import TitleItem from "./components/title-Item";
-import PaymentModalItem from "./components/paymentModal-item";
+import PaymentModalItem from "./components/paymentModalitem";
+
 function PaymentFinish() {
+ 
   return (
     <>
       <BannerItem />
@@ -41,6 +43,7 @@ function PaymentFinish() {
                 variant="contained"
                 className="w-full  p-5 rounded-full bg-white text-black"
                 startIcon={<PixIcon />}
+                
               >
                 Pix
               </Button>
