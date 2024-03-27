@@ -6,7 +6,7 @@ import {
   PaymentModalContextType,
 } from "../../../contexts/paymentoModalContext";
 import { useContext } from "react";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function PaymentModalItem() {
   const navigate = useNavigate();
@@ -15,18 +15,17 @@ function PaymentModalItem() {
   ) as PaymentModalContextType;
   const closeAndREdirect = () => {
     closeModal();
-    return navigate("/  ")
+    return navigate("/")
   };
   return (
     <>
       <div
         className={`${
-          isModalOpen ? "flex flex-col" : "hidden"
-        } fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-20`}
+          isModalOpen ? "top-0 left-0" : "-top-[1000px] left-0"
+        } fixed transition-all duration-500  w-screen h-screen flex items-center justify-center z-20 `}
       >
         <div
-          className="relative bg-white p-10 rounded-lg flex flex-col items-center justify-center text-center shadow-2xl
-        "
+          className={` duration-500 relative  left-0 bg-white p-10 rounded-lg flex flex-col items-center justify-center text-center shadow-2xl`}
         >
           <div
             className="absolute top-5 right-5 cursor-pointer "
