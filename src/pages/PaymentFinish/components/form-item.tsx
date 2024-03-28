@@ -1,70 +1,59 @@
+import { Form, FormGroup, InputWithLabel } from "../../../components/ui/Form";
+
 function FormItem() {
   return (
-    <form action="" className="flex flex-col gap-6">
-      <div className="flex gap-5 w-full flex-grow ">
-        <label htmlFor="" className="flex flex-col gap-3 w-full">
-          Nome
-          <input
-            type="text"
-            className="w-full p-2 shadow-lg outline-none rounded-lg border-none"
-            placeholder="Eduardo"
-          />
-        </label>
-        <label htmlFor="" className="flex flex-col gap-3  w-full">
-          Sobrenome
-          <input
-            type="text"
-            className="w-full p-2 shadow-lg outline-none rounded-lg border-none"
-            placeholder="Luiz"
-          />
-        </label>
-      </div>
-      <div className="flex gap-5 w-full flex-grow ">
-        <label htmlFor="" className="flex flex-col gap-3 w-full">
-          Telefone
-          <input
-            type="text"
-            className="w-full p-2 shadow-lg outline-none rounded-lg border-none"
-            placeholder="(81)98888-8888"
-          />
-        </label>
-        <label htmlFor="" className="flex flex-col gap-3  w-full">
-          Cep
-          <input
-            type="text"
-            className="w-full p-2 shadow-lg outline-none rounded-lg border-none"
-            placeholder="58212-029"
-          />
-        </label>
-      </div>
-      <label htmlFor="" className="flex flex-col gap-3  w-full">
-        Endereço
-        <input
+    <Form action="" className="flex flex-col gap-6">
+      <FormGroup className="flex gap-5 w-full flex-grow ">
+        <InputWithLabel
+          className="flex flex-col gap-3 w-full "
+          placeholder="Eduardo"
+          labelTitle="Nome"
           type="text"
-          className="w-full p-2 shadow-lg outline-none rounded-lg border-none"
-          placeholder="Rua rio Catalão"
         />
-      </label>
+        <InputWithLabel
+          className="flex flex-col gap-3 w-full "
+          placeholder="Luiz"
+          labelTitle="Sobrenome"
+          type="text"
+        />
+      </FormGroup>
+      <FormGroup className="flex gap-5 w-full flex-grow ">
+        <InputWithLabel
+          className="flex flex-col gap-3 w-full "
+          placeholder="(81)98888-8888"
+          labelTitle="Telefone"
+          type="text"
+        />
+        <InputWithLabel
+          className="flex flex-col gap-3 w-full "
+          placeholder="58212-029"
+          labelTitle="Cep"
+          type="text"
+        />
+      </FormGroup>
 
-      <div className="flex gap-5 w-full flex-grow ">
-        <label htmlFor="" className="flex flex-col gap-3 w-full">
-          Bairro
-          <input
-            type="text"
-            className="w-full p-2 shadow-lg outline-none rounded-lg border-none"
-            placeholder="Paratibe"
-          />
-        </label>
-        <label htmlFor="" className="flex flex-col gap-3  w-full">
-          Cidade
-          <input
-            type="text"
-            className="w-full p-2 shadow-lg outline-none rounded-lg border-none"
-            placeholder="Paulista"
-          />
-        </label>
-      </div>
-    </form>
+      <InputWithLabel
+        className="flex flex-col gap-3 w-full "
+        placeholder="Rua rio Catalão"
+        labelTitle="Endereço"
+        type="text"
+      />
+
+      <FormGroup className="flex gap-5 w-full flex-grow ">
+        <InputWithLabel
+          className="flex flex-col gap-3 w-full "
+          placeholder="Paratibe"
+          labelTitle="Bairro"
+          type="text"
+        />
+        <InputWithLabel
+          className="flex flex-col gap-3 w-full "
+          placeholder="Paulista"
+          labelTitle="Cidade"
+          type="text"
+        />
+      </FormGroup>
+    </Form>
   );
 }
 

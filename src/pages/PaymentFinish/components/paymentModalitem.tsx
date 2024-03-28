@@ -15,7 +15,7 @@ function PaymentModalItem() {
   ) as PaymentModalContextType;
   const closeAndREdirect = () => {
     closeModal();
-    return navigate("/")
+    return navigate("/");
   };
   return (
     <>
@@ -29,7 +29,7 @@ function PaymentModalItem() {
         >
           <div
             className="absolute top-5 right-5 cursor-pointer "
-            onClick={closeAndREdirect}
+            onClick={closeModal}
           >
             <CloseIcon />
           </div>
@@ -50,6 +50,11 @@ function PaymentModalItem() {
             Voltar para tela inicial
           </Button>
         </div>
+        <div
+          aria-label="overlay"
+          className="absolute -z-20 w-screen h-screen top-0 left-0  opacity-15 cursor-pointer"
+          onClick={closeModal}
+        ></div>
       </div>
     </>
   );
