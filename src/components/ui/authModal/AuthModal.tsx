@@ -15,7 +15,7 @@ enum VarianType {
 }
 
 function AuthModal() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [variant, setVariant] = useState<VarianType>(VarianType.LOGIN);
   function closeModal() {
     setIsModalOpen(false);
