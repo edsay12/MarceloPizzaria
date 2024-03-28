@@ -1,12 +1,12 @@
 import { Button } from "@mui/material";
 import paymentSuccess from "../../../assets/paymentSuccess.png";
-import CloseIcon from "@mui/icons-material/Close";
 import {
   PaymentModalContext,
   PaymentModalContextType,
 } from "../../../contexts/paymentoModalContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Modal, ModalCloseButton, ModalContainer, ModalContainerOverlay } from "../../../components/ui/Modal";
 
 function PaymentModalItem() {
   const navigate = useNavigate();
@@ -19,20 +19,9 @@ function PaymentModalItem() {
   };
   return (
     <>
-      <div
-        className={`${
-          isModalOpen ? "top-0 left-0" : "-top-[1000px] left-0"
-        } fixed transition-all duration-500  w-screen h-screen flex items-center justify-center z-20 `}
-      >
-        <div
-          className={` duration-500 relative  left-0 bg-white p-10 rounded-lg flex flex-col items-center justify-center text-center shadow-2xl`}
-        >
-          <div
-            className="absolute top-5 right-5 cursor-pointer "
-            onClick={closeModal}
-          >
-            <CloseIcon />
-          </div>
+      <ModalContainer isModalOpen={isModalOpen}>
+        <Modal className="max-w-[450px] max-h-[620px] p-20 ">
+          <ModalCloseButton onClick={closeModal}/>
 
           <img src={paymentSuccess} alt="" className="max-w-60" />
           <div className="max-w-[400px] mt-5">
@@ -49,13 +38,9 @@ function PaymentModalItem() {
           >
             Voltar para tela inicial
           </Button>
-        </div>
-        <div
-          aria-label="overlay"
-          className="absolute -z-20 w-screen h-screen top-0 left-0  opacity-15 cursor-pointer"
-          onClick={closeModal}
-        ></div>
-      </div>
+        </Modal>
+        <ModalContainerOverlay onClick={closeModal}/>
+      </ModalContainer>
     </>
   );
 }
