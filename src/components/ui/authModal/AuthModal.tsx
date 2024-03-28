@@ -1,9 +1,13 @@
-import CloseIcon from "@mui/icons-material/Close";
-
 import { useState } from "react";
 import FormItem from "./components/FormItem";
 
 import FormItemCadastro from "./components/FormItemCadastro";
+import {
+  Modal,
+  ModalCloseButton,
+  ModalContainer,
+  ModalContainerOverlay,
+} from "../Modal";
 
 enum VarianType {
   LOGIN = "LOGIN",
@@ -19,20 +23,9 @@ function AuthModal() {
 
   return (
     <>
-      <div
-        className={`${
-          isModalOpen ? "top-0 left-0" : "-top-[1000px] left-0 s"
-        } fixed transition-all duration-500  w-screen h-screen flex items-center justify-center z-20 p-5  `}
-      >
-        <div
-          className={`relative max-w-[380px] max-h-[500px] h-full w-full z-50 bg-white p-10 rounded-lg flex flex-col items-center justify-center text-center shadow-2xl `}
-        >
-          <div
-            className="absolute top-5 right-5 cursor-pointer z-10 "
-            onClick={closeModal}
-          >
-            <CloseIcon />
-          </div>
+      <ModalContainer isModalOpen={isModalOpen}>
+        <Modal className={`max-w-[380px] max-h-[500px] `}>
+          <ModalCloseButton onClick={closeModal} />
 
           {variant === VarianType.LOGIN ? (
             <div className="text-left 0 w-full flex flex-col space-y-10">
@@ -66,14 +59,10 @@ function AuthModal() {
               </span>
             </p>
           )}
-        </div>
+        </Modal>
 
-        <div
-          aria-label="overlay"
-          className="absolute -z-20 w-screen h-screen top-0 left-0  opacity-15 cursor-pointer"
-          onClick={closeModal}
-        ></div>
-      </div>
+        <ModalContainerOverlay onClick={closeModal}/>
+      </ModalContainer>
     </>
   );
 }
