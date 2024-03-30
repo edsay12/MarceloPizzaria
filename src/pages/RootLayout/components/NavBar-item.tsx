@@ -25,7 +25,7 @@ function NavBar() {
           <Logo className="w-32" />
         </TopLinkLogo>
 
-        <TopLinkList className={`gap-10 absolute md:static bg-white md:bg-transparent md:flex-row flex-col md:w-full w-[200px] rounded-lg  items-center justify-center top-20 right-10 p-5 md:p-10 z-50 ${isNavOppen ?"flex" :"hidden md:flex"}`} >
+        <TopLinkList className={`gap-10 absolute md:static bg-white md:bg-transparent md:flex-row flex-col md:w-full w-[200px] rounded-lg  items-center justify-center top-20 right-10 p-5 md:p-10 md:z-0 z-50 ${isNavOppen ?"flex" :"hidden md:flex"}`} >
           <TopBarLink to={"/"}>Inicio</TopBarLink>
           <TopBarLink to={"/Menu"}>Menu</TopBarLink>
           <TopBarLink to={"#Delivery"}>Delivery</TopBarLink>
