@@ -1,10 +1,16 @@
 import { AnchorHTMLAttributes, HTMLAttributes } from "react";
 import { cn } from "../../../lib/utils/cn";
 import { Link, LinkProps } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface TopBarProps extends HTMLAttributes<HTMLElement> {}
 interface TopLinkProps extends LinkProps {}
-interface TopLinkAnchor extends AnchorHTMLAttributes<HTMLAnchorElement>{}
+interface ResponsiveIconsProps {
+  toggleOpen: () => void;
+  isOppen: boolean;
+}
+interface TopLinkAnchor extends AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 function TopBarHeader({ children, className }: TopBarProps) {
   return (
@@ -36,7 +42,10 @@ function TopLinkLogo({ children, className, to }: TopLinkProps) {
 }
 
 function TopLinkList({ children, className }: TopBarProps) {
-  return <ul className={cn("flex list-none gap-4", className)}>{children}</ul>;
+  return <ul className={cn("list-none gap-4 flex ", className)}>{children}</ul>;
+}
+function ResponsiveMenu({ children, className }: TopBarProps) {
+  return <div className={cn("bg-white", className)}>{children}</div>;
 }
 
 function TopBarLink({ children, className, to, ...rest }: TopLinkProps) {
@@ -55,7 +64,12 @@ function TopBarLink({ children, className, to, ...rest }: TopLinkProps) {
     </li>
   );
 }
-function TopBarAnchorLink({ children, className, href,...rest}: TopLinkAnchor) {
+function TopBarAnchorLink({
+  children,
+  className,
+  href,
+  ...rest
+}: TopLinkAnchor) {
   return (
     <li>
       <a
@@ -72,6 +86,14 @@ function TopBarAnchorLink({ children, className, href,...rest}: TopLinkAnchor) {
   );
 }
 
+function ResponsiveIcon({ isOppen = false,toggleOpen }: ResponsiveIconsProps) {
+  return (
+    <div className="text-gray-500 cursor-pointer flex md:hidden " onClick={toggleOpen}>
+      {isOppen ? <CloseIcon /> : <MenuIcon />}
+    </div>
+  );
+}
+
 export {
   TopBar,
   TopBarHeader,
@@ -79,4 +101,6 @@ export {
   TopLinkList,
   TopBarLink,
   TopBarAnchorLink,
+  ResponsiveIcon,
+  ResponsiveMenu
 };

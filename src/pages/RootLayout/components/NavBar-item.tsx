@@ -4,26 +4,34 @@ import {
   TopBarLink,
   TopLinkList,
   TopLinkLogo,
+  ResponsiveIcon,
+  ResponsiveMenu,
 } from "../../../components/ui/layout/TopBar";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Logo from "../../../components/molecules/Logo";
+import { useState } from "react";
 function NavBar() {
+  const [isNavOppen, setIsNavOppen] = useState(false);
+
+  function toggleOppen() {
+    setIsNavOppen((value) => !value);
+  }
   return (
-    <TopBarHeader>
+    <TopBarHeader className="relative">
       <TopBar>
         <TopLinkLogo to={"/"}>
           <Logo className="w-32" />
         </TopLinkLogo>
 
-        <TopLinkList className="gap-10">
+        <TopLinkList className={`gap-10 absolute md:static bg-white md:bg-transparent md:flex-row flex-col md:w-full w-[200px] rounded-lg  items-center justify-center top-20 right-10 p-5 md:p-10 z-50 ${isNavOppen ?"flex" :"hidden md:flex"}`} >
           <TopBarLink to={"/"}>Inicio</TopBarLink>
           <TopBarLink to={"/Menu"}>Menu</TopBarLink>
           <TopBarLink to={"#Delivery"}>Delivery</TopBarLink>
           <TopBarLink to={"#Sobre"}>Sobre</TopBarLink>
         </TopLinkList>
-        <TopLinkList>
+        <TopLinkList className="hidden md:flex">
           <TopBarLink to={"/menu"} title="Pesquisar">
             <SearchIcon />
           </TopBarLink>
@@ -34,6 +42,9 @@ function NavBar() {
             <ShoppingCartIcon />
           </TopBarLink>
         </TopLinkList>
+        
+
+        <ResponsiveIcon isOppen={isNavOppen} toggleOpen={toggleOppen} />
       </TopBar>
     </TopBarHeader>
   );
