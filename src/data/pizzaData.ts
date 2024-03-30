@@ -1,9 +1,9 @@
-const pizzas = [
+export const pizzas = [
   {
     id: "d1e9b3f2-8a6c-4e7a-9e5b-1f3c8d7e0a2f",
     imagem: "./PizzaImage/frango-catupiry.png",
     titulo: "Pizza de Frango ",
-    // ingredientes: ["Frango desfiado", "Catupiry", "Azeitonas"],
+
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 24.99,
   },
@@ -18,12 +18,7 @@ const pizzas = [
     id: "a8b9c0d1-e2f3-a4b5-c6d7-e8f9a0b1c2d",
     imagem: "./PizzaImage/pepperoni.png",
     titulo: "Pizza de Pepperoni",
-    // ingredientes: [
-    //   "Pepperoni",
-    //   "Molho de tomate",
-    //   "Queijo mussarela",
-    //   "Pimentão",
-    // ],
+
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 26.99,
   },
@@ -31,12 +26,7 @@ const pizzas = [
     id: "b1c2d3e4-f5g6-h7i8-j9k0-l1m2n3o4p5",
     imagem: "./PizzaImage/calabresa.png",
     titulo: "Pizza de Calabresa   ",
-    // ingredientes: [
-    //   "Calabresa",
-    //   "Molho de tomate",
-    //   "Cebola",
-    //   "Queijo mussarela",
-    // ],
+
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 23.99,
   },
@@ -44,7 +34,7 @@ const pizzas = [
     id: "c2d3e4f5-g6h7-i8j9-k0l1-m2n3-o4p5q6r7",
     imagem: "./PizzaImage/atum.png",
     titulo: "Pizza de Atum",
-    // ingredientes: ["Atum", "Molho de tomate", "Cebola", "Azeitonas"],
+
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 25.99,
   },
@@ -52,13 +42,7 @@ const pizzas = [
     id: "d3e4f5g6-h7i8j9-k0l1m2-n3o4p5-q6r7s8t9",
     imagem: "./PizzaImage/4queijos.png",
     titulo: "Pizza Quatro Queijos",
-    // ingredientes: [
-    //   "Queijo mussarela",
-    //   "Queijo gorgonzola",
-    //   "Queijo parmesão",
-    //   "Queijo provolone",
-    //   "Molho de tomate",
-    // ],
+
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 28.99,
   },
@@ -66,13 +50,7 @@ const pizzas = [
     id: "e4f5g6h7-i8j9k0-l1m2n3-o4p5q6-r7s8t9u0",
     imagem: "./PizzaImage/portuguesa.png",
     titulo: "Pizza Portuguesa",
-    // ingredientes: [
-    //   "Presunto",
-    //   "Molho de tomate",
-    //   "Cebola",
-    //   "Ovo cozido",
-    //   "Azeitonas",
-    // ],
+
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 27.99,
   },
@@ -80,7 +58,7 @@ const pizzas = [
     id: "f5g6h7i8-j9k0l1-m2n3o4-p5q6r7-s8t9u0v1",
     imagem: "./PizzaImage/camarao-c-catupiry.png",
     titulo: "Pizza de Bacon",
-    // ingredientes: ["Camarão", "Molho de tomate", "Queijo mussarela", "Tomate"],
+
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 26.99,
   },
@@ -88,7 +66,7 @@ const pizzas = [
     id: "g6h7i8j9-k0l1m2n3-o4p5q6r7-s8t9u0v1w2",
     imagem: "./PizzaImage/chocolate.png",
     titulo: "Pizza de Chocolate",
-    // ingredientes: ["Chocolate", "Morangos", "Banana", "Açúcar"],
+
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 22.99,
   },
@@ -96,12 +74,7 @@ const pizzas = [
     id: "h7i8j9k0-l1m2n3o4-p5q6r7s8-t9u0v1w2x3",
     imagem: "./PizzaImage/milho-c-bacon.png",
     titulo: "Pizza de Bacon",
-    // ingredientes: [
-    //   "Bacon",
-    //   "Milho",
-    //   "Molho de tomate",
-    //   "Queijo mussarela",
-    // ],
+
     ingredientes: "Molho,Queijo,Cogumelos,Pimentão,Espinafre",
     preco: 23.99,
   },

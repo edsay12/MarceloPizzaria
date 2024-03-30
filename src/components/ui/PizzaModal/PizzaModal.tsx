@@ -1,5 +1,5 @@
-import { ChangeEvent, useState } from "react";
-import pizzaImage from "/PizzaImage/atum.png";
+import { ChangeEvent, useContext, useState } from "react";
+
 import {
   Modal,
   ModalCloseButton,
@@ -9,13 +9,17 @@ import {
 import { Form, Input, Label } from "../Form";
 import { Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
+import {
+  PizzaModalContext,
+  PizzaModalContextType,
+} from "../../../contexts/pizzaModalContext";
 function PizzaModal() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const { isModalOpen, closeModal, pizza } = useContext(
+    PizzaModalContext
+  ) as PizzaModalContextType;
   const [pizzaSizeSelected, setPizzaSizeSelected] = useState("grande");
 
-  function closeModal() {
-    setIsModalOpen(false);
-  }
   function handleSizeChange(e: ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
 
@@ -30,17 +34,17 @@ function PizzaModal() {
 
           <div className="flex lg:flex-row flex-col  gap-10 items-center">
             <img
-              src={pizzaImage}
+              src={pizza.imagem}
               alt={"imagem de uma linda pizza"}
               className="lg:max-w-[280px] lg:max-h-[280px] w-[200px]"
             />
 
             <div className="text-center lg:text-left max-w-[500px] text-wrap ">
               <h3 className="text-3xl font-bold text-gray-500 text-wrap">
-                Camarão c/ catupiry
+                {pizza.titulo}
               </h3>
               <p className="text-sm font-normal text-gray-500 mt-3">
-                Molho muçarela, camarões no molho catupiry e oregano
+                {pizza.ingredientes}
               </p>
 
               <h5 className="text-gray-500 text-lg uppercase font-light mt-5">
@@ -121,7 +125,7 @@ function PizzaModal() {
               <h5 className="text-gray-500 text-lg uppercase font-light mt-5">
                 Preço
               </h5>
-              <p className="text-black text-xl mt-5">R$ 35,99</p>
+              <p className="text-black text-xl mt-5">R$ {pizza.preco}</p>
 
               <div className=" flex justify-between  items-center mt-10 b">
                 <Button
