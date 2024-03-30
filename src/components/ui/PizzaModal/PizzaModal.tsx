@@ -16,10 +16,12 @@ import {
   PizzaModalContext,
   PizzaModalContextType,
 } from "../../../contexts/pizzaModalContext";
+import { CartContext, CartContextType } from "../../../contexts/CartContext";
 function PizzaModal() {
   const { isModalOpen, closeModal, pizza } = useContext(
     PizzaModalContext
   ) as PizzaModalContextType;
+  const { addPizza } = useContext(CartContext) as CartContextType;
   const [pizzaSizeSelected, setPizzaSizeSelected] = useState("pequena");
   const [quantidade, setQuantidade] = useState(1);
 
@@ -38,7 +40,10 @@ function PizzaModal() {
     }
   }
 
-
+  function addPizzaToCart() {
+    addPizza(pizza, quantidade);
+    closeModal()
+  }
 
   return (
     <>
@@ -141,7 +146,9 @@ function PizzaModal() {
               </h5>
 
               <div className="flex items-center justify-between">
-                <p className="text-black text-xl mt-5">R$ {(pizza.preco * quantidade).toFixed(2)}</p>
+                <p className="text-black text-xl mt-5">
+                  R$ {(pizza.preco * quantidade).toFixed(2)}
+                </p>
                 <div className="flex items-center justify-center text-gray-500">
                   <Button className="text-gray-500" onClick={removeQuantidade}>
                     <HorizontalRuleIcon />
@@ -158,6 +165,7 @@ function PizzaModal() {
                   className="bg-yellow-500"
                   variant="contained"
                   endIcon={<ShoppingCartIcon />}
+                  onClick={addPizzaToCart}
                 >
                   Adicionar
                 </Button>

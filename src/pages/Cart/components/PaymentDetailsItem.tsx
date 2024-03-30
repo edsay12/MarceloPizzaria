@@ -9,8 +9,13 @@ import {
   PaymentDetailsValue,
 } from "../../../components/ui/PaymentDetails";
 import { Button } from "@mui/material";
+import { CartContext, CartContextType } from "../../../contexts/CartContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 function PaymentDetailsItem() {
+  const { totalPrice, totalItens } = useContext(CartContext) as CartContextType;
+  const navigate = useNavigate();
   return (
     <PaymentDetailsContainer>
       <PaymentDetailsContainerResume>
@@ -18,13 +23,13 @@ function PaymentDetailsItem() {
           Resumo
         </PaymentDetailsContainerResumeTitle>
         <PaymentDetailsContainerResumeNumberOfItens>
-          3 itens
+          {totalItens()} itens
         </PaymentDetailsContainerResumeNumberOfItens>
       </PaymentDetailsContainerResume>
 
       <PaymentDetails>
         <PaymentDetailsTitle>Subtotal</PaymentDetailsTitle>
-        <PaymentDetailsValue>$300</PaymentDetailsValue>
+        <PaymentDetailsValue>${totalPrice()}</PaymentDetailsValue>
       </PaymentDetails>
       <PaymentDetails>
         <PaymentDetailsTitle>Entrega</PaymentDetailsTitle>
@@ -37,10 +42,10 @@ function PaymentDetailsItem() {
       <PaymentDetailsSeparator />
       <PaymentDetails>
         <PaymentDetailsTitle>Total</PaymentDetailsTitle>
-        <PaymentDetailsValue>$300</PaymentDetailsValue>
+        <PaymentDetailsValue>${totalPrice()}</PaymentDetailsValue>
       </PaymentDetails>
 
-      <Button variant="contained" className="bg-yellow-500">
+      <Button variant="contained" className="bg-yellow-500" onClick={()=> navigate("/payment")}>
         Pagamento
       </Button>
     </PaymentDetailsContainer>

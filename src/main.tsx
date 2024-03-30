@@ -6,15 +6,18 @@ import { PaymentModalContextProvider } from "./contexts/paymentoModalContext.tsx
 import AuthModal from "./components/ui/authModal/AuthModal.tsx";
 import PizzaModal from "./components/ui/PizzaModal/PizzaModal.tsx";
 import { PizzaModalContextProvider } from "./contexts/pizzaModalContext.tsx";
+import { CartContextProvider } from "./contexts/CartContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <PizzaModalContextProvider>
-      <PaymentModalContextProvider>
-        <AuthModal />
-        <PizzaModal />
-        <App />
-      </PaymentModalContextProvider>
-    </PizzaModalContextProvider>
+    <CartContextProvider>
+      <PizzaModalContextProvider>
+        <PaymentModalContextProvider>
+          <AuthModal />
+          <PizzaModal />
+          <App />
+        </PaymentModalContextProvider>
+      </PizzaModalContextProvider>
+    </CartContextProvider>
   </React.StrictMode>
 );

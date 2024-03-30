@@ -1,28 +1,47 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 import { PizzaType } from "../@types";
 
-type CartContextType = {
-  pizzas: PizzaType[];
+export type CartContextType = {
+  pizzas: PizzaCard[];
   addPizza: (pizza: PizzaType, quantidade: number) => void;
   removePizza: (pizzaItem: PizzaType, quantidade: number) => void;
+  totalPrice: () => string;
+  totalItens:()=>number
+  clearCart:()=> void
 };
 
-interface PizzaCard extends PizzaType {
+export interface PizzaCard extends PizzaType {
   quantidade: number;
 }
 
 export const CartContext = createContext<CartContextType | null>(null);
 
 export function CartContextProvider({ children }: { children: ReactNode }) {
-  const [pizzas, setPizzas] = useState<PizzaCard[]>([]);
+  const cartItems:PizzaCard[] = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')!) : [] ;
+  const [pizzas, setPizzas] = useState<PizzaCard[]>(cartItems);
+
+  // add as pizzas tambem ao localstorage
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(pizzas));
+  }, [pizzas]);
+  // add pizza ao array de pizzas
+  useEffect(() => {
+    const cartItems = localStorage.getItem("cartItems");
+    if (cartItems) {
+      setPizzas(JSON.parse(cartItems));
+    }
+}, []);
+
   const addPizza = (pizzaItem: PizzaType, quantidade: number) => {
     const pizzaIsOnTheCard = pizzas.find((pizza) => pizza.id === pizzaItem.id);
 
     if (pizzaIsOnTheCard) {
-      pizzas.map((pizza) =>
-        pizza.id == pizzaItem.id
-          ? { ...pizza, quantidade: pizza.quantidade + quantidade }
-          : pizzaItem
+      setPizzas(
+        pizzas.map((pizza) =>
+          pizza.id === pizzaItem.id
+            ? { ...pizza, quantidade: pizza.quantidade + quantidade }
+            : pizza
+        )
       );
     } else {
       setPizzas([...pizzas, { ...pizzaItem, quantidade }]);
@@ -45,7 +64,24 @@ export function CartContextProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  const totalPrice = () => {
+    return pizzas.reduce(
+      (total, pizza) => total + pizza.preco * pizza.quantidade,
+      0
+    ).toFixed(2);
+  };
+
+  const clearCart = ()=>{
+    setPizzas([])
+  }
+
+  const totalItens = () => {
+    return pizzas.reduce((total,pizza)=> total + pizza.quantidade,0)
+  }
+
   return (
-    <CartContext.Provider value={{ addPizza,removePizza,pizzas }}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ addPizza, removePizza, pizzas,clearCart, totalPrice,totalItens }}>
+      {children}
+    </CartContext.Provider>
   );
 }
