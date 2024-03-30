@@ -19,14 +19,17 @@ import {
 
 import pizzas from "../../../data/pizzaData";
 import { useContext } from "react";
-import { PizzaModalContext, PizzaModalContextType } from "../../../contexts/pizzaModalContext";
+import {
+  PizzaModalContext,
+  PizzaModalContextType,
+} from "../../../contexts/pizzaModalContext";
+import { useNavigate } from "react-router-dom";
 
 function Recipes() {
-  const { oppenModal } = useContext(
-    PizzaModalContext
-  ) as PizzaModalContextType;
+  const { oppenModal } = useContext(PizzaModalContext) as PizzaModalContextType;
+  const navigate = useNavigate();
   return (
-    <Section className="mt-[100px]"  id="recipes">
+    <Section className="mt-[100px]" id="recipes">
       <SectionContainer className="flex justify-between md:items-center mt-10 flex-wrap">
         <SectionDetailsContainer className="w-full xl:max-w-full xl:text-center">
           <SectionSubTitle>Receitas</SectionSubTitle>
@@ -46,7 +49,9 @@ function Recipes() {
             return (
               <PizzaCard key={pizza.id} className="w-full">
                 <PizzaCardImage className="w-full" src={pizza.imagem} />
-                <PizzaCardButton onClick={()=> oppenModal(pizza.id)}>+</PizzaCardButton>
+                <PizzaCardButton onClick={() => oppenModal(pizza.id)}>
+                  +
+                </PizzaCardButton>
 
                 <PizzaCardPrice>
                   {pizza.preco.toLocaleString("pt-BR", {
@@ -65,7 +70,10 @@ function Recipes() {
         </PizzaCardContainer>
       </SectionContainer>
       <SectionContainer className="flex justify-center">
-        <Button className="bg-yellow-500 mt-20 text-white mx-auto">
+        <Button
+          className="bg-yellow-500 mt-20 text-white mx-auto"
+          onClick={() => navigate("/menu")}
+        >
           Ver Mais
         </Button>
       </SectionContainer>

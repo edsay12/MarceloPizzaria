@@ -11,10 +11,12 @@ import {
   SectionImageContainer,
   SectionTitle,
 } from "../../../components/ui/section";
+import { useNavigate } from "react-router-dom";
 
 
 
 function Hero() {
+  const navigate = useNavigate();
   // const [imageLoaded, setImageLoaded] = useState(false);
 
   // useEffect(() => {
@@ -39,6 +41,7 @@ function Hero() {
               aria-label="Fazer pedido"
               className="bg-yellow-500 text-white hover:scale-110 transition-all duration-500 mt-5"
               size="large"
+              onClick={()=> navigate("/menu")}
             >
               Fazer Pedido
             </Button>
