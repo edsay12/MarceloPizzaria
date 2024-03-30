@@ -5,7 +5,6 @@ import {
   TopLinkList,
   TopLinkLogo,
   ResponsiveIcon,
-  ResponsiveMenu,
 } from "../../../components/ui/layout/TopBar";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
