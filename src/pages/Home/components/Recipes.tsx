@@ -18,8 +18,13 @@ import {
 } from "../../../components/ui/section";
 
 import pizzas from "../../../data/pizzaData";
+import { useContext } from "react";
+import { PizzaModalContext, PizzaModalContextType } from "../../../contexts/pizzaModalContext";
 
 function Recipes() {
+  const { oppenModal } = useContext(
+    PizzaModalContext
+  ) as PizzaModalContextType;
   return (
     <Section className="mt-[100px]"  id="recipes">
       <SectionContainer className="flex justify-between md:items-center mt-10 flex-wrap">
@@ -41,7 +46,7 @@ function Recipes() {
             return (
               <PizzaCard key={pizza.id} className="w-full">
                 <PizzaCardImage className="w-full" src={pizza.imagem} />
-                <PizzaCardButton>+</PizzaCardButton>
+                <PizzaCardButton onClick={()=> oppenModal(pizza.id)}>+</PizzaCardButton>
 
                 <PizzaCardPrice>
                   {pizza.preco.toLocaleString("pt-BR", {

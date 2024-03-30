@@ -9,6 +9,8 @@ import {
 import { Form, Input, Label } from "../Form";
 import { Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import AddIcon from "@mui/icons-material/Add";
+import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 
 import {
   PizzaModalContext,
@@ -18,12 +20,22 @@ function PizzaModal() {
   const { isModalOpen, closeModal, pizza } = useContext(
     PizzaModalContext
   ) as PizzaModalContextType;
-  const [pizzaSizeSelected, setPizzaSizeSelected] = useState("grande");
+  const [pizzaSizeSelected, setPizzaSizeSelected] = useState("pequena");
+  const [quantidade, setQuantidade] = useState(1);
 
   function handleSizeChange(e: ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
 
     setPizzaSizeSelected(value);
+  }
+
+  function addQuantidade() {
+    setQuantidade((value) => value + 1);
+  }
+  function removeQuantidade() {
+    if (quantidade > 1) {
+      setQuantidade((value) => value - 1);
+    }
   }
 
   return (
@@ -125,8 +137,20 @@ function PizzaModal() {
               <h5 className="text-gray-500 text-lg uppercase font-light mt-5">
                 Preço
               </h5>
-              <p className="text-black text-xl mt-5">R$ {pizza.preco}</p>
 
+              <div className="flex items-center justify-between">
+                <p className="text-black text-xl mt-5">R$ {(pizza.preco * quantidade).toFixed(2)}</p>
+                <div className="flex items-center justify-center text-gray-500">
+                  <Button className="text-gray-500" onClick={removeQuantidade}>
+                    <HorizontalRuleIcon />
+                  </Button>
+
+                  {quantidade}
+                  <Button className="text-gray-500" onClick={addQuantidade}>
+                    <AddIcon />
+                  </Button>
+                </div>
+              </div>
               <div className=" flex justify-between  items-center mt-10 b">
                 <Button
                   className="bg-yellow-500"
