@@ -3,9 +3,9 @@ import { cn } from "../../lib/utils/cn";
 
 interface FormProps extends FormHTMLAttributes<HTMLFormElement> {}
 
-function Form({ className, children }: FormProps) {
+function Form({ className, children,...rest }: FormProps) {
   return (
-    <form className={cn("flex flex-col gap-6 ", className)}>{children}</form>
+    <form className={cn("flex flex-col gap-6 ", className)} {...rest}>{children}</form>
   );
 }
 function FormGroup({ className, children }: FormProps) {
