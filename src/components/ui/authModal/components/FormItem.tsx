@@ -1,13 +1,15 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { Form, InputWithLabel } from "../../Form";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../../redux/store/UserSlice";
-import { useNavigate } from "react-router-dom";
+import { AuthModalContext, AuthModalContextType } from "../../../../contexts/authModalContext";
+
 
 function FormItem() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const {closeModal} = useContext(AuthModalContext) as AuthModalContextType
   const dispatch = useDispatch();
 
 
@@ -22,8 +24,8 @@ function FormItem() {
       if(result.payload){
         setEmail("")
         setSenha("")
-        
       }
+      closeModal()
     })
  
   }

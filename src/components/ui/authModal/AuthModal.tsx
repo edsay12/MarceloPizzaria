@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import FormItem from "./components/FormItem";
 
 import FormItemCadastro from "./components/FormItemCadastro";
@@ -8,6 +8,7 @@ import {
   ModalContainer,
   ModalContainerOverlay,
 } from "../Modal";
+import { AuthModalContext, AuthModalContextType } from "../../../contexts/authModalContext";
 
 enum VarianType {
   LOGIN = "LOGIN",
@@ -15,11 +16,10 @@ enum VarianType {
 }
 
 function AuthModal() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const {isModalOpen,closeModal} = useContext(AuthModalContext) as AuthModalContextType
+
   const [variant, setVariant] = useState<VarianType>(VarianType.LOGIN);
-  function closeModal() {
-    setIsModalOpen(false);
-  }
+  
 
   return (
     <>
@@ -61,7 +61,7 @@ function AuthModal() {
           )}
         </Modal>
 
-        <ModalContainerOverlay onClick={closeModal}/>
+        <ModalContainerOverlay onClick={closeModal} />
       </ModalContainer>
     </>
   );
