@@ -7,17 +7,21 @@ import AuthModal from "./components/ui/authModal/AuthModal.tsx";
 import PizzaModal from "./components/ui/PizzaModal/PizzaModal.tsx";
 import { PizzaModalContextProvider } from "./contexts/pizzaModalContext.tsx";
 import { CartContextProvider } from "./contexts/CartContext.tsx";
+import { Provider } from "react-redux";
+import store from "./redux/store/index.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <CartContextProvider>
-      <PizzaModalContextProvider>
-        <PaymentModalContextProvider>
-          <AuthModal />
-          <PizzaModal />
-          <App />
-        </PaymentModalContextProvider>
-      </PizzaModalContextProvider>
-    </CartContextProvider>
+    <Provider store={store}>
+      <CartContextProvider>
+        <PizzaModalContextProvider>
+          <PaymentModalContextProvider>
+            <AuthModal />
+            <PizzaModal />
+            <App />
+          </PaymentModalContextProvider>
+        </PizzaModalContextProvider>
+      </CartContextProvider>
+    </Provider>
   </React.StrictMode>
 );
