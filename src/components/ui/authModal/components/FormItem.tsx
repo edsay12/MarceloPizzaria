@@ -25,6 +25,7 @@ function FormItem() {
         setEmail("")
         setSenha("")
       }
+
       closeModal()
     })
  
