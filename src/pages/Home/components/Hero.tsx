@@ -3,6 +3,7 @@ import vetor1 from "../../../assets/vetor1.svg";
 import pizza1 from "../../../assets/pizza1.svg";
 import Tilt from "react-vanilla-tilt";
 
+
 import {
   Section,
   SectionContainer,
@@ -41,6 +42,7 @@ function Hero() {
               aria-label="Fazer pedido"
               className="bg-yellow-500 text-white hover:scale-110 transition-all duration-500 mt-5"
               size="large"
+              title="bottão de fazer pedido"
               onClick={()=> navigate("/menu")}
             >
               Fazer Pedido
@@ -62,7 +64,7 @@ function Hero() {
                 boxShadow: "",
               }}
             >
-              <img src={pizza1} alt="" className="max-w-[700px] w-full" />
+              <img src={pizza1} alt="vetor de backgroud" className="max-w-[700px] w-full"  />
             </Tilt>
           </SectionImageContainer>
         </SectionContainer>
@@ -71,7 +73,7 @@ function Hero() {
       <img
         src={vetor1}
         className="absolute top-0 right-0 lg:max-w-[900px]  max-w-[800px] -z-20"
-        alt=""
+        alt="pizza de queijo"
         loading="lazy"
       />
     </div>
