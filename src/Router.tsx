@@ -9,7 +9,10 @@ import { lazy, Suspense, useContext } from "react";
 import PaymentFinish from "./pages/PaymentFinish";
 import Loading from "./components/molecules/loading";
 import User from "./pages/User";
-import { AuthModalContext, AuthModalContextType } from "./contexts/authModalContext";
+import {
+  AuthModalContext,
+  AuthModalContextType,
+} from "./contexts/authModalContext";
 
 const Home = lazy(() => import("./pages/Home"));
 const RootLayout = lazy(() => import("./pages/RootLayout"));
@@ -17,26 +20,22 @@ const Menu = lazy(() => import("./pages/Menu"));
 const Cart = lazy(() => import("./pages/Cart"));
 
 function PrivateRoute({
-  children,
+  component,
   redirectTo,
 }: {
-  children: JSX.Element;
+  component: JSX.Element;
   redirectTo: string;
 }) {
-  const {oppenModal} = useContext(AuthModalContext) as AuthModalContextType
-  var isAuthenticate = false;
-  localStorage.getItem("user")
-    ? (isAuthenticate = true)
-    : (isAuthenticate = false);
+  const { oppenModal } = useContext(AuthModalContext) as AuthModalContextType;
 
-    if(isAuthenticate){
-      return children
-    }else {
-      oppenModal()
-      return <Navigate to={redirectTo} />
-    }
+  const user = false
 
-  
+  if (!user) {
+    oppenModal();
+    return <Navigate to={redirectTo} />;
+  } 
+
+  return component
 }
 
 const router = createBrowserRouter(
@@ -46,7 +45,10 @@ const router = createBrowserRouter(
       <Route path="/menu" element={<Menu />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/payment" element={<PaymentFinish />} />
-      <Route path="/user" element={<PrivateRoute redirectTo="/"><User/></PrivateRoute>} />
+      <Route
+        path="/user"
+        element={<PrivateRoute redirectTo="/" component={<User />} />}
+      />
     </Route>
   )
 );

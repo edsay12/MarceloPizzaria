@@ -61,7 +61,7 @@ function AuthModal() {
           )}
         </Modal>
 
-        <ModalContainerOverlay onClick={closeModal} />
+        <ModalContainerOverlay onClick={closeModal}  />
       </ModalContainer>
     </>
   );
