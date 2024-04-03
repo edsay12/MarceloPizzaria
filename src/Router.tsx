@@ -4,9 +4,6 @@ import {
   Navigate,
   Route,
   RouterProvider,
-  useLocation,
-  useNavigate,
-  useNavigation,
 } from "react-router-dom";
 import { lazy, Suspense, useContext } from "react";
 import PaymentFinish from "./pages/PaymentFinish";
@@ -30,18 +27,15 @@ function PrivateRoute({
   redirectTo: string;
 }) {
   const { oppenModal } = useContext(AuthModalContext) as AuthModalContextType;
-  const navigate = useNavigate()
 
   const user = false
 
   if (!user) {
     oppenModal();
-
-    return navigate("/")
+    return <Navigate to={redirectTo} />;
   } 
 
   return component
-
 }
 
 const router = createBrowserRouter(
@@ -53,7 +47,7 @@ const router = createBrowserRouter(
       <Route path="/payment" element={<PaymentFinish />} />
       <Route
         path="/user"
-        element={<PrivateRoute redirectTo="/s" component={<User />} />}
+        element={<PrivateRoute redirectTo="/" component={<User />} />}
       />
     </Route>
   )
