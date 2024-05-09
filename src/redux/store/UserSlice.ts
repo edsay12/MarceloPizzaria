@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const loginUser = createAsyncThunk(
   "user/login",
   async (userCredentials: { email: string; senha: string }) => {
-    const request = ""; // Fazer a requisição
+    // const request = ""; // Fazer a requisição
     return localStorage.setItem("user", JSON.stringify(userCredentials));
   }
 );
@@ -22,12 +22,12 @@ const userSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         (state.loading = false),
-          (state.user = action.payload),
+          (state.user = action.payload!),
           (state.error = null);
       })
-      .addCase(loginUser.rejected, (state, action) => {
+      .addCase(loginUser.rejected, (state) => {
         (state.loading = false),
-          (state.user = action.payload),
+          (state.user = null),
           (state.error = null);
       });
   },

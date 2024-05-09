@@ -4,13 +4,16 @@ import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../../redux/store/UserSlice";
 import { AuthModalContext, AuthModalContextType } from "../../../../contexts/authModalContext";
+import store from "../../../../redux/store";
+
+export type AppDispatch = typeof store.dispatch
 
 
 function FormItem() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const {closeModal} = useContext(AuthModalContext) as AuthModalContextType
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
 
   function handdleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -20,7 +23,7 @@ function FormItem() {
       email,
       senha,
     };
-    dispatch(loginUser(userCredentials)).then((result)=>{
+    dispatch(loginUser(userCredentials)).then((result:any)=>{
       if(result.payload){
         setEmail("")
         setSenha("")
