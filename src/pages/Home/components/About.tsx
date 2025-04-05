@@ -32,7 +32,7 @@ function About() {
                 boxShadow: "",
               }}
             >
-              <img src={pizza2} alt="" className="max-w-[700px] w-full" />
+              <img src={pizza2} alt="pizza de queijo" className="max-w-[700px] w-full" />
             </Tilt>
           </SectionImageContainer>
           <SectionDetailsContainer>
@@ -49,6 +49,7 @@ function About() {
               aria-label="Fazer pedido"
               className="bg-yellow-500 text-white hover:scale-110 transition-all duration-500 mt-5"
               size="large"
+              title="bottão de saber mais sobre o restaurante"
             >
               Ler Mais
             </Button>
@@ -58,7 +59,7 @@ function About() {
         <img
           src={vetor2}
           className="absolute  -top-[200px] md:-top=[100px] lg:-top-[250px] -left-5 lg:max-w-[500px]  max-w-[300px] -z-20"
-          alt=""
+          alt="vetor de fundo"
           loading="lazy"
         />
       </Section>

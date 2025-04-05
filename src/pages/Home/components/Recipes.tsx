@@ -48,8 +48,8 @@ function Recipes() {
           {pizzas.map((pizza) => {
             return (
               <PizzaCard key={pizza.id} className="w-full">
-                <PizzaCardImage className="w-full" src={pizza.imagem} />
-                <PizzaCardButton onClick={() => oppenModal(pizza.id)}>
+                <PizzaCardImage className="w-full" src={pizza.imagem}  alt="imagem de uma pizza"/>
+                <PizzaCardButton onClick={() => oppenModal(pizza.id)} title="Bottão para adicionar uma nova pizza">
                   +
                 </PizzaCardButton>
 
@@ -73,6 +73,7 @@ function Recipes() {
         <Button
           className="bg-yellow-500 mt-20 text-white mx-auto"
           onClick={() => navigate("/menu")}
+          title="Bottão para acessar o menu"
         >
           Ver Mais
         </Button>

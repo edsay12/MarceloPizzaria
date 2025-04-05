@@ -45,6 +45,7 @@ function ModalCloseButton({ onClick }: ModalCloseButtonProps) {
     <Button
       className="absolute top-5 right-5 cursor-pointer z-10  text-gray-500"
       onClick={onClick}
+      title="Bottão de fechar modal"
     >
       <CloseIcon />
     </Button>

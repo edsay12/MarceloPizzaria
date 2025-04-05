@@ -65,7 +65,7 @@ function Hero() {
       <img
         src={vetor1}
         className="absolute top-0 right-0 lg:max-w-[900px]  max-w-[800px] -z-20"
-        alt=""
+        alt="pizza de queijo"
         loading="lazy"
       />
     </div>

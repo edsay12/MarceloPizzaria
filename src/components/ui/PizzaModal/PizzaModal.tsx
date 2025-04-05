@@ -66,9 +66,9 @@ function PizzaModal() {
                 {pizza.ingredientes}
               </p>
 
-              <h5 className="text-gray-500 text-lg uppercase font-light mt-5">
+              <h3 className="text-gray-500 text-lg uppercase font-light mt-5">
                 Tamanho
-              </h5>
+              </h3>
 
               <Form action="POST" className="flex flex-row mt-5 gap-0 ">
                 <Label
@@ -141,21 +141,21 @@ function PizzaModal() {
                 </Label>
               </Form>
 
-              <h5 className="text-gray-500 text-lg uppercase font-light mt-5">
+              <h3 className="text-gray-500 text-lg uppercase font-light mt-5">
                 Preço
-              </h5>
+              </h3>
 
               <div className="flex items-center justify-between">
                 <p className="text-black text-xl mt-5">
                   R$ {(pizza.preco * quantidade).toFixed(2)}
                 </p>
                 <div className="flex items-center justify-center text-gray-500">
-                  <Button className="text-gray-500" onClick={removeQuantidade}>
+                  <Button className="text-gray-500" onClick={removeQuantidade} title="Remover pizza">
                     <HorizontalRuleIcon />
                   </Button>
 
                   {quantidade}
-                  <Button className="text-gray-500" onClick={addQuantidade}>
+                  <Button className="text-gray-500" onClick={addQuantidade} title="Adicionar pizza">
                     <AddIcon />
                   </Button>
                 </div>
