@@ -54,9 +54,7 @@ function Hero() {
                 src={pizza1}
                 alt="Pizza saborosa" // sempre bom usar um alt descritivo pra acessibilidade
                 className="max-w-[700px] w-full"
-                loading="lazy"
               />
-              
             </Tilt>
           </SectionImageContainer>
         </SectionContainer>
