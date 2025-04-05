@@ -8,7 +8,7 @@ export default {
         sans: ["Poppins", "sans-serif"],
       },
       backgroundImage: {
-        banner: "url('./src/assets/banner.svg')",
+        banner: "url('./src/assets/banner.webp')",
       },
       colors: {
         gray: {

@@ -1,8 +1,7 @@
 import { Button } from "@mui/material";
 import vetor1 from "../../../assets/vetor1.svg";
-import pizza1 from "../../../assets/pizza1.svg";
+import pizza1 from "../../../assets/pizza1.webp";
 import Tilt from "react-vanilla-tilt";
-
 import {
   Section,
   SectionContainer,
@@ -13,19 +12,8 @@ import {
 } from "../../../components/ui/section";
 import { useNavigate } from "react-router-dom";
 
-
-
 function Hero() {
   const navigate = useNavigate();
-  // const [imageLoaded, setImageLoaded] = useState(false);
-
-  // useEffect(() => {
-  //   const img = new Image();
-  //   img.onload = () => {
-  //     setImageLoaded(true);
-  //   };
-  //   img.src = pizza1;
-  // }, []);
   return (
     <div>
       <Section className=" ">
@@ -41,7 +29,7 @@ function Hero() {
               aria-label="Fazer pedido"
               className="bg-yellow-500 text-white hover:scale-110 transition-all duration-500 mt-5"
               size="large"
-              onClick={()=> navigate("/menu")}
+              onClick={() => navigate("/menu")}
             >
               Fazer Pedido
             </Button>
@@ -62,7 +50,13 @@ function Hero() {
                 boxShadow: "",
               }}
             >
-              <img src={pizza1} alt="" className="max-w-[700px] w-full" />
+              <img
+                src={pizza1}
+                alt="Pizza saborosa" // sempre bom usar um alt descritivo pra acessibilidade
+                className="max-w-[700px] w-full"
+                loading="lazy"
+              />
+              
             </Tilt>
           </SectionImageContainer>
         </SectionContainer>

@@ -4,9 +4,8 @@ import SearchResult from "./components/SearchResult";
 import Pizzas from "./components/Pizzas";
 
 import SearchForm from "./components/SearchForm";
-import { lazy } from "react";
 
-const BannerItem = lazy(() => import("./components/Banner-item"));
+import BannerItem from "./components/Banner-item";
 
 function Menu() {
   return (
