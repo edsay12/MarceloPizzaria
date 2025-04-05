@@ -7,7 +7,7 @@ function Banner({ className, children }: SectionProps) {
   return (
     <section
       className={cn(
-        "bg-[url(./src/assets/banner.webp)] w-full h-[500px] bg-cover bg-center flex items-center justify-center  ",
+        "bg-[url(assets/banner.webp)] w-full h-[500px] bg-cover bg-center flex items-center justify-center  ",
         className
       )}
     >
